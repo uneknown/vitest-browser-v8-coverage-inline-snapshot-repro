@@ -1,6 +1,8 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 
-const functionCount = 100_000
+// Plain Vitest does not expand this tiny test the way Angular's test
+// builder does, so this keeps the snapshot call in a larger browser module.
+const functionCount = 50_000
 const calledFunctionCount = 200
 
 const helpers = Array.from(
